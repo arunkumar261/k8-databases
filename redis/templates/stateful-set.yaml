@@ -1,39 +1,40 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mongodb
+  name: redis
   namespace: roboshop
-  labels: 
-    app: mongodb
+  labels:
+    app: redis
     project: roboshop
     tier: db
 spec:
-  serviceName: "mongodb"
-  replicas: {{ .Values.mongodb.replicas}}
+  serviceName: "redis"
+  replicas: {{ .Values.redis.replicas}}
   selector:
     matchLabels:
-      app: mongodb
+      app: redis
       project: roboshop
       tier: db
   template:
     metadata:
       labels:
-        app: mongodb
+        app: redis
         project: roboshop
         tier: db
     spec:
       containers:
-      - name: mongodb
-        image: "narupallearun/mongodb:{{ .Values.mongodb.imageVersion}}"
+      - name: redis
+        image: redis
         volumeMounts:
-        - name: mongodb
-          mountPath: /data/db
+        - name: redis
+          mountPath: /data
   volumeClaimTemplates:
-  - metadata:
-      name: mongodb
+  - matadata:
+      name: redis
     spec:
-      accessModes: [ "ReadWriteOnce" ]
+      accessModes: [ "ReadWriteOnce"]
       storageClassName: "ebs-sc"
       resources:
         requests:
           storage: 1Gi
+
