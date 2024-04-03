@@ -9,8 +9,8 @@ data:
   mapUsers: |
     - groups:
         - roboshop-pod-reader
-    userarn: arn:aws:iam::790021005618:user/ramesh-k8
-    username: ramesh-k8
+      userarn: arn:aws:iam::790021005618:user/ramesh-k8
+      username: ramesh-k8
 kind: ConfigMap
 metadata:
   name: aws-auth
