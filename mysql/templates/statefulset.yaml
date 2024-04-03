@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: "narupallearun/mysql:{{ .Values.mysql.imageVersion}}"
+        image: "narupallearun/mysql:{{ .Values.mysql.imageVersion }}"
         # args:
         # - "--ignore-db-dir=lost+found"
         envFrom:
@@ -39,9 +39,9 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: mysql
-      spec: 
-        accessModes: [ "ReadWriteOnce" ]
-        storageClassName: "ebs-sc"
-        resources:
-          requests:
-            storage: 2Gi
+    spec: 
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "ebs-sc"
+      resources:
+        requests:
+          storage: 2Gi
