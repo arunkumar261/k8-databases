@@ -14,7 +14,7 @@ metadata:
   name: roboshop-pod-reader
   namespace: roboshop
 subjects:
-- kind: user
+- kind: User
   name: ramesh-k8
   apiGroup: rbac.authorization.k8s.io
 roleRef:
