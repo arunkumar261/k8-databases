@@ -29,7 +29,7 @@ spec:
         - name: redis
           mountPath: /data
   volumeClaimTemplates:
-  - matadata:
+  - metadata:
       name: redis
     spec:
       accessModes: [ "ReadWriteOnce"]
