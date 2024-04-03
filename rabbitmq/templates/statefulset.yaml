@@ -6,10 +6,10 @@ metadata:
   labels:
     app: rabbitmq
     project: roboshop
-    tier: db 
-spec: 
+    tier: db
+spec:
   serviceName: "rabbitmq"
-  replicas: {{ .Values.rabbitmq.replicas}}
+  replicas: {{ .Values.rabbitmq.replicas }}
   selector:
     matchLabels:
       app: rabbitmq
@@ -25,19 +25,16 @@ spec:
       containers:
       - name: rabbitmq
         image: rabbitmq
-        args:
-        - "--ignore-db-dir=lost+found"
         envFrom:
         - secretRef:
             name: rabbitmq
         volumeMounts:
         - name: rabbitmq
           mountPath: /var/lib/rabbitmq
-
   volumeClaimTemplates:
   - metadata:
       name: rabbitmq
-    spec: 
+    spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: "ebs-sc"
       resources:
