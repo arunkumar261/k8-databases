@@ -34,12 +34,12 @@ spec:
         - name: rabbitmq
           mountPath: /var/lib/rabbitmq
 
-    volumeClaimTemplates:
-    - metadata:
-        name: rabbitmq
-      spec: 
-        accessModes: [ "ReadWriteOnce" ]
-        storageClassName: "ebs-sc"
-        resources:
-          requests:
-            storage: 2Gi
+  volumeClaimTemplates:
+  - metadata:
+      name: rabbitmq
+    spec: 
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "ebs-sc"
+      resources:
+        requests:
+          storage: 2Gi
