@@ -8,13 +8,13 @@ metadata:
     project: roboshop
     tier: db
 spec:
-  serviceName: "mongodb"
-  replicas: {{ .Values.mongodb.replicas}}
   selector:
-    matchLabels:
-      app: mongodb
-      project: roboshop
-      tier: db
+  matchLabels:
+    app: mongodb
+    project: roboshop
+    tier: db
+  serviceName: "mongodb"
+  replicas: {{ .Values.mongodb.replicas }}
   template:
     metadata:
       labels:
@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: "narupallearun/mongodb:{{ .Values.mongodb.imageVersion}}"
+        image: "narupallearun/mongodb:{{ .Values.mongodb.imageVersion }}"
         volumeMounts:
         - name: mongodb
           mountPath: /data/db
