@@ -1,22 +1,37 @@
+# apiVersion: v1
+# data:
+#   mapRoles: |
+#     - groups:
+#         - system:bootstrappers
+#         - system:nodes
+#       rolearn: arn:aws:iam::790021005618:role/eksctl-roboshop-project-nodegroup--NodeInstanceRole-epGRwqbFNHsn
+#       username: system:node:{{EC2PrivateDNSName}}
+
+#     - groups:
+#         - roboshop-admin
+#       userarn: arn:aws:iam::790021005618:user/raheem-k8
+#       username: raheem-k8
+# kind: ConfigMap
+# metadata:
+#   name: aws-auth
+#   namespace: kube-system
+#   uid: 38c97e67-0701-4f19-96b7-8336289df2f2
+
 apiVersion: v1
 data:
   mapRoles: |
     - groups:
-        - system:bootstrappers
-        - system:nodes
-      rolearn: arn:aws:iam::790021005618:role/eksctl-roboshop-project-nodegroup--NodeInstanceRole-epGRwqbFNHsn
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::790021005618:role/eksctl-roboshop-project-nodegroup--NodeInstanceRole-cNAwqpHbyVYC
       username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
     - groups:
-        - roboshop-pod-reader
+      - roboshop-pod-reader
       userarn: arn:aws:iam::790021005618:user/ramesh-k8
       username: ramesh-k8
-    - groups:
-        - roboshop-admin
-      userarn: arn:aws:iam::790021005618:user/raheem-k8
-      username: raheem-k8
 kind: ConfigMap
 metadata:
   name: aws-auth
   namespace: kube-system
-  uid: 38c97e67-0701-4f19-96b7-8336289df2f2
+  uid: ee93137a-1f48-487e-9b9d-b586a0d22e3e
