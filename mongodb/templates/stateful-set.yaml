@@ -8,11 +8,11 @@ metadata:
     project: roboshop
     tier: db
 spec:
-  selector:
-  matchLabels:
-    app: mongodb
-    project: roboshop
-    tier: db
+  selector: 
+    matchLabels:
+      app: mongodb
+      project: roboshop
+      tier: db
   serviceName: "mongodb"
   replicas: {{ .Values.mongodb.replicas }}
   template:
