@@ -25,13 +25,13 @@ spec:
       - name: catalogue
         image: "narupallearun/catalogue:{{ .Values.catalogue.imageVersion }}"
         imagePullPolicy: Always
-        # resources:
-        #   requests:
-        #     cpu: "50m"
-        #     memory: "128Mi"
-        #   limits:
-        #     cpu: "100m"
-        #     memory: "256Mi"
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "128Mi"
+          limits:
+            cpu: "100m"
+            memory: "256Mi"
         envFrom:
         - configMapRef:
             name: catalogue        
