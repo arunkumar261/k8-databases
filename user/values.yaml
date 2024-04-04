@@ -1,4 +1,4 @@
 user: 
   replicas: 1
-  imageVersion: v1 
+  imageVersion: v1  
   averageUtilization: 75
