@@ -1,4 +1,4 @@
 catalogue: 
   replicas: 1
   imageVersion: v1
-  utilization: 75%
+  averageUtilization: 75%

@@ -16,4 +16,4 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: {{ .Values.catalogue.utilization }}
+        averageUtilization: {{ .Values.catalogue.averageUtilization }}
