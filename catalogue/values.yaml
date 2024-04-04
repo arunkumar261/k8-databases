@@ -1,4 +1,5 @@
 catalogue: 
   replicas: 1
   imageVersion: v1
-  averageUtilization: 75
+hpa:
+  averageUtilization: 75  
