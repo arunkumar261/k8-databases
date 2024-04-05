@@ -1,4 +1,4 @@
 payment: 
-  replicas: 2
+  replicas: 1
   imageVersion: v1
   averageUtilization: 75
